@@ -98,25 +98,14 @@ DanfossHeatingTests/
 | **Mats** | [mqts241](https://github.com/mqts241) |
 | **Manish** | - |
 
-### File Responsibilities
+### Responsibility Breakdown
 
-| File | Contributor | Description |
-| :--- | :--- | :--- |
-| **AssetManager.cs** | Manish, Luigi, Carolina | Manages static data for machines, grid layout, and unit configuration. |
-| **ProductionUnit.cs** | Manish, Luigi, Carolina | Defines the properties and behaviors of individual heating units (Gas Boiler, Oil Boiler, etc.). |
-| **Optimizer.cs** | Manish, Gabriele, Mats | Core logic for calculating the cheapest mix of heat units to meet demand. |
-| **ProductionSchedule.cs** | Manish, Gabriele, Mats | Represents the generated production schedule and optimization results. |
-| **SourceDataManager.cs** | Manish, Gabriele, Lara | Handles loading and processing of time-series data for heat demand and electricity prices. |
-| **HeatDemand.cs** | Manish, Gabriele, Lara | Data model representing heat demand entries from source files. |
-| **ResultDataManager.cs** | Manish, Gabriele, Carolina, Luigi, Lara | Manages the export of optimization results to CSV files. |
-| **ResultEntry.cs** | Manish, Gabriele, Carolina, Luigi, Lara | Data model for a single row of optimization results. |
-| **MainWindowViewModel.cs** | Everyone (DV Team) | Main view model handling navigation, theme switching, and global state. |
-| **OptimizerViewModel.cs** | Everyone (DV Team) | View model for the optimization page, connecting the UI to the Optimizer logic. |
-| **MachineryViewModel.cs** | Everyone (DV Team) | View model for the machinery page, allowing users to configure unit parameters. |
-| **CostViewModel.cs** | Everyone (DV Team) | Handles logic for displaying cost-related data and visualizations. |
-| **CO2EmissionViewModel.cs** | Everyone (DV Team) | Handles logic for displaying CO2 emission data and visualizations. |
-| **Unit Tests** | Everyone | Test suites for verifying the functionality of AM, OPT, SDM, RDM, and UI. |
-
+- **AM:** Manish, [Luigi](https://github.com/Lucol24), [Carolina](https://github.com/chaeyrie)
+- **OPT:** Manish, [Gabriele](https://github.com/Gabbo693), [Mats](https://github.com/mqts241)
+- **SDM:** Manish, [Gabriele](https://github.com/Gabbo693), [Lara](https://github.com/Lara-Ghi)
+- **RDM:** Manish, [Gabriele](https://github.com/Gabbo693), [Carolina](https://github.com/chaeyrie), [Luigi](https://github.com/Lucol24), [Lara](https://github.com/Lara-Ghi)
+- **DV:** [Carolina](https://github.com/chaeyrie), [Luigi](https://github.com/Lucol24), [Lara](https://github.com/Lara-Ghi), [Gabriele](https://github.com/Gabbo693), [Mats](https://github.com/mqts241), Manish
+- **Unit Testing:** [Gabriele](https://github.com/Gabbo693), [Mats](https://github.com/mqts241), [Luigi](https://github.com/Lucol24), Manish, [Lara](https://github.com/Lara-Ghi), [Carolina](https://github.com/chaeyrie)
 - **UML Diagram:** [Mats](https://github.com/mqts241)
 
 ---
