@@ -1,0 +1,3 @@
+Timestamp,UnitName,HeatProduced,ElectricityProduced,ProductionCost,FuelConsumption,CO2Emissions
+05/31/2025 19:40:13,Unit1,100,50,200,10,5
+05/31/2025 19:40:13,Unit2,150,75,300,15,7.5
