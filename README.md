@@ -1,4 +1,5 @@
-# Semester Project - Heat Production Optimization App
+# 🔥 Semester Project 2: Danfoss Optimizer - Heat Production Optimization App
+![Danfoss Optimizer](DanfossHeating/Assets/README/danfoss1.webp)
 
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
@@ -7,9 +8,12 @@
 **⚠️ Note for the Reviewer:**
 This application uses CSV and JSON files in the `/Data` folder. You can test the optimization with sample data for heat demand and electricity prices.
 
+## 📌 Project Overview
+
+This app automates district heating schedules for the city of Heatington. It finds the cheapest way to meet heat demand while maximizing electricity market profits. Built with **Avalonia** for a modern UI and modular design for clear data flow.
+
 ## 📖 Table of Contents
 - [Getting Started](#-getting-started)
-- [Project Overview](#-project-overview)
 - [Features](#-features)
 - [Project Structure](#-project-structure)
 - [Contributors](#-contributors)
@@ -33,10 +37,6 @@ From the project root, run:
 dotnet run -- --term
 ```
 This starts the original console-only version.
-
-## 📌 Project Overview
-
-This app automates district heating schedules for the city of Heatington. It finds the cheapest way to meet heat demand while maximizing electricity market profits. Built with **Avalonia** for a modern UI and modular design for clear data flow.
 
 ## 🎯 Features
 
