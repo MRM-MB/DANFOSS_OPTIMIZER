@@ -8,19 +8,11 @@
 **⚠️ Note for the Reviewer:**
 This application uses CSV and JSON files in the `/Data` folder. You can test the optimization with sample data for heat demand and electricity prices.
 
-## 📌 Project Overview
+## Project Overview
 
 This app automates district heating schedules for the city of Heatington. It finds the cheapest way to meet heat demand while maximizing electricity market profits. Built with **Avalonia** for a modern UI and modular design for clear data flow.
 
-## 📖 Table of Contents
-- [Getting Started](#-getting-started)
-- [Features](#-features)
-- [Project Structure](#-project-structure)
-- [Contributors](#-contributors)
-- [Scenarios](#-scenarios)
-- [Screenshots & Assets](#-screenshots--assets)
-
-## 🚀 Getting Started
+## Getting Started
 
 Run the application in two modes:
 
@@ -38,7 +30,7 @@ dotnet run -- --term
 ```
 This starts the original console-only version.
 
-## 🎯 Features
+## Features
 
 - **Cost Optimization**: Calculates the cheapest mix of heat units hour by hour.
 - **Dark Mode**: Toggle between light and dark themes.
@@ -110,7 +102,7 @@ DanfossHeatingTests/
 
 ---
 
-## 🔧 How to Run
+## How to Run
 
 1. **App:** Open a terminal in the `DanfossHeating` folder and run:
 
@@ -133,7 +125,7 @@ DanfossHeatingTests/
 
 ---
 
-## 🖼️ Screenshots & Assets
+## Screenshots & Assets
 
 Below is a quick visual tour of the app’s main features:
 
