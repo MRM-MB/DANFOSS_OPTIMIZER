@@ -225,7 +225,8 @@
                     <TextBox Text="{Binding UserName, Mode=TwoWay}"
                             Watermark="Enter your name"
                             IsEnabled="{Binding !IsLoading}"
-                            Padding="14,10" />
+                            Padding="14,10"
+                            KeyDown="OnLoginTextBoxKeyDown" />
                     
                     <!-- Enter Button with Loading Animation -->
                     <Grid Margin="0,10,0,0">

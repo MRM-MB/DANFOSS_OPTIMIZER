@@ -1,7 +1,9 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using DanfossHeating.ViewModels;
 using System;
+using System.Diagnostics;
 
 namespace DanfossHeating.Views;
 
@@ -71,6 +73,25 @@ public partial class AboutUsPage : UserControl
         catch (Exception ex)
         {
             Console.WriteLine($"Error setting theme class: {ex.Message}");
+        }
+    }
+
+    private void OpenGitHub(object? sender, RoutedEventArgs e)
+    {
+        if (sender is Button button && button.Tag is string url && !string.IsNullOrWhiteSpace(url))
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to open GitHub link: {ex.Message}");
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Input;
 using Avalonia.Threading;
 using System;
 using DanfossHeating.ViewModels;
@@ -138,6 +139,20 @@ public partial class MainWindow : Window
         {
             _mainContent.Content = page;
             Console.WriteLine($"Navigation to {viewModel.PageType} successful");
+        }
+    }
+
+    private void OnLoginTextBoxKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Enter || _viewModel == null)
+        {
+            return;
+        }
+
+        if (!_viewModel.IsLoading && _viewModel.EnterCommand.CanExecute(null))
+        {
+            _viewModel.EnterCommand.Execute(null);
+            e.Handled = true;
         }
     }
 }

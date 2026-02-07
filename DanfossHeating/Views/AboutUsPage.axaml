@@ -19,6 +19,30 @@
     </UserControl.Resources>
 
     <UserControl.Styles>
+        <Style Selector="Button.githubButton">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#111111" Offset="0" />
+                        <GradientStop Color="#2B2B2B" Offset="1" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Padding" Value="18,8" />
+            <Setter Property="CornerRadius" Value="999" />
+            <Setter Property="RenderTransform" Value="scale(1)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.githubButton:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.03)" />
+        </Style>
         <Style Selector="Border.hoverable">
             <Setter Property="Transitions">
                 <Transitions>
@@ -29,6 +53,18 @@
         </Style>
         <Style Selector="Border.hoverable:pointerover">
             <Setter Property="RenderTransform" Value="scale(1.02)"/>
+            <Setter Property="BoxShadow" Value="0 12 24 0 #50000000" />
+        </Style>
+        <Style Selector="Border.hoverGlow">
+            <Setter Property="Opacity" Value="0" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Border.hoverImage:pointerover > Panel > Border.hoverGlow">
+            <Setter Property="Opacity" Value="1" />
         </Style>
         <Style Selector="Border.hoverable:pointerover Image">
             <Setter Property="Opacity" Value="1"/>
@@ -287,7 +323,7 @@
                                     FontSize="36"
                                     FontWeight="Bold"
                                     Foreground="{Binding IsDarkTheme, Converter={StaticResource BoolToColorConverter}}"
-                                    Text="About Our Team" />
+                                    Text="About Our Team 2025" />
                                 
                                 <TextBlock
                                     MaxWidth="800"
@@ -317,13 +353,11 @@
                                     Rows="2">
                                     <!-- Team Members -->
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -349,6 +383,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -358,17 +398,29 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Carolina" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/chaeyrie">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
 
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -394,6 +446,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -403,17 +461,29 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Gabriele" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/Gabbo693">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
 
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -439,6 +509,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -448,17 +524,29 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Lara" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/Lara-Ghi">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
 
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -484,6 +572,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -493,17 +587,29 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Luigi" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/Lucol24">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
 
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -529,6 +635,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -538,17 +650,29 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Manish" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/Manish-SDU?tab=overview&amp;from=2026-02-01&amp;to=2026-02-07">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
 
                                     <Border Margin="12" Padding="6">
-                                        <StackPanel>
+                                        <StackPanel Spacing="6">
                                             <Border
                                                 Classes="hoverable hoverImage"
                                                 CornerRadius="12"
-                                                ClipToBounds="True"
-                                                BoxShadow="0 4 12 0 #40000000"
-                                                Background="#10000000">
+                                                ClipToBounds="True">
                                                 <Panel>
                                                     <Image 
                                                         Classes="greyVersion"
@@ -574,6 +698,12 @@
                                                             </Transitions>
                                                         </Image.Transitions>
                                                     </Image>
+                                                    <Border
+                                                        Classes="hoverGlow"
+                                                        CornerRadius="12"
+                                                        Background="#12D40000"
+                                                        BorderBrush="#D40000"
+                                                        BorderThickness="1" />
                                                 </Panel>
                                             </Border>
                                             <TextBlock
@@ -583,6 +713,20 @@
                                                 FontWeight="Bold"
                                                 Foreground="#D40000"
                                                 Text="Mats" />
+                                            <Button
+                                                Classes="githubButton"
+                                                HorizontalAlignment="Center"
+                                                Click="OpenGitHub"
+                                                Tag="https://github.com/mqts241">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <PathIcon
+                                                        Width="16"
+                                                        Height="16"
+                                                        Data="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.48 0-.24-.01-.88-.01-1.73-2.78.63-3.37-1.38-3.37-1.38-.45-1.18-1.11-1.49-1.11-1.49-.91-.65.07-.64.07-.64 1.01.07 1.54 1.07 1.54 1.07.9 1.59 2.36 1.13 2.94.86.09-.67.35-1.13.64-1.39-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05.8-.23 1.65-.34 2.5-.34.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.05 2.74-1.05.55 1.43.2 2.49.1 2.75.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .26.18.59.69.49C19.14 20.51 22 16.7 22 12.2 22 6.58 17.52 2 12 2z"
+                                                        Foreground="White" />
+                                                    <TextBlock Text="View GitHub" />
+                                                </StackPanel>
+                                            </Button>
                                         </StackPanel>
                                     </Border>
                                 </UniformGrid>
