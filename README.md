@@ -1,4 +1,4 @@
-# 🔥 Semester Project 2: Danfoss - Heat Production Optimization App
+# 🔥 Danfoss: Heat Production Optimizer
 ![Danfoss Optimizer](DanfossHeating/Assets/README/danfoss1.webp)
 
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
